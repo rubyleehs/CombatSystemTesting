@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bed04c967459c4099491bfff3bd897, type: 3}
+  m_Name: BS_DownSmash
+  m_EditorClassIdentifier: 
+  damageProperties:
+  - damageModifier: 1
+    damageType: {fileID: 11400000, guid: 45c5d51940d2df6429c4e7bc66c7c41b, type: 2}
+  windUpDuration: 30
+  chargeDuration: 30
+  actionDuration: 2
+  windDownDuration: 10
+  counterStunDuration: 45
+  meleeStartPos: {x: 0, y: 1, z: 0}
+  meleeEndPos: {x: 0, y: -1, z: 0}
