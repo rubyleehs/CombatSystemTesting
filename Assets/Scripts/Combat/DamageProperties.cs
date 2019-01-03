@@ -16,6 +16,6 @@ public struct MagicalDamageProperties : IDamageProperties
 [System.Serializable]
 public struct PhysicalDamageProperties : IDamageProperties
 {
-    public float damageModifier = 1;
+    public float damageModifier;
     public PhysicalDamageType damageType;
 }

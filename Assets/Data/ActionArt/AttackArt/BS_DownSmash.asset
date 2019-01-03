@@ -11,13 +11,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bed04c967459c4099491bfff3bd897, type: 3}
   m_Name: BS_DownSmash
   m_EditorClassIdentifier: 
+  hitboxInfo:
+  - position: {x: 1, y: 0}
+    rotation: 0
+    size: {x: 2.03, y: 0.21}
   damageProperties:
   - damageModifier: 1
     damageType: {fileID: 11400000, guid: 45c5d51940d2df6429c4e7bc66c7c41b, type: 2}
-  windUpDuration: 30
-  chargeDuration: 30
+  numberOfHits: 1
+  windUpDuration: 3
+  chargeDuration: 3
   actionDuration: 2
-  windDownDuration: 10
-  counterStunDuration: 45
+  windDownDuration: 1
+  counterStunDuration: 5
+  maxChargeDamageModifier: 0
+  canInterupt: 0
   meleeStartPos: {x: 0, y: 1, z: 0}
   meleeEndPos: {x: 0, y: -1, z: 0}

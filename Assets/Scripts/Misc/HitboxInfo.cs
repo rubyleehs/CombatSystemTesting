@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitboxInfo
+[System.Serializable]
+public struct HitboxInfo
 {
     //Local to character
     public Vector2 position;

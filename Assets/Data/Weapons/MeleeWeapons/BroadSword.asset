@@ -16,3 +16,4 @@ MonoBehaviour:
   - damageAmount: 50
     damageType: {fileID: 11400000, guid: 3fb4094bf2a798045b4656db90200b1a, type: 2}
   attackArtArsenal: {fileID: 11400000, guid: 8d045f3a6ae5403459c56c3989d21ee2, type: 2}
+  attackArtChain: 00000000

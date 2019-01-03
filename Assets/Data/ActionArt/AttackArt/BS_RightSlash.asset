@@ -11,13 +11,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bed04c967459c4099491bfff3bd897, type: 3}
   m_Name: BS_RightSlash
   m_EditorClassIdentifier: 
-  damageModifier: 1
-  damageType: []
+  damageProperties: []
   windUpDuration: 10
   chargeDuration: 0
   actionDuration: 2
   windDownDuration: 5
   counterStunDuration: 10
-  damageProperties: []
+  maxChargeDamageModifier: 0
+  hitboxInfo:
+  - position: {x: 0.9, y: 0}
+    rotation: 0
+    size: {x: 1.8, y: 2}
   meleeStartPos: {x: -1, y: 0, z: 0}
   meleeEndPos: {x: 1, y: 0, z: 0}
