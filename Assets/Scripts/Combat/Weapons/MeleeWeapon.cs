@@ -6,6 +6,8 @@ using UnityEngine;
 public class MeleeWeapon : ScriptableObject
 {
     public float baseDamage;
+    public float momentumIncurredMultiplier;
+    public float momentumCausedMultiplier;
     public MagicalDamageProperties[] damageProperties; //magical propeties: holy,dark,fire,lightning
 
     public AttackArtArsenal attackArtArsenal; //all possible attack arts

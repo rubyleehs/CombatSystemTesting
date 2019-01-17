@@ -7,6 +7,11 @@ public abstract class AttackArt : ScriptableObject {
     public PhysicalDamageProperties[] damageProperties;
 
     public int numberOfHits = 1;
+    public float momentumInccuredAngle;
+    public float momentumInccuredMagnitude;
+
+    public float momentumCausedAngle;
+    public float momentumCausedMagnitude;
 
     public float windUpDuration;
     public float chargeDuration;

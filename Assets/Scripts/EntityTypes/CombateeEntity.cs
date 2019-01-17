@@ -4,7 +4,6 @@ using UnityEngine;
 
 public abstract class CombateeEntity : LiveEntity
 {
-    public float health;
     public MeleeWeapon weapon;
     public LayerMask canHitLayer;
 
@@ -17,6 +16,8 @@ public abstract class CombateeEntity : LiveEntity
 
     protected bool isInteruptable = false;
 
+    protected List<StatusEffect> statusEffects;
+
     protected virtual void Attack()
     {
         currentArt = weapon.attackArtArsenal.attackArts[weapon.attackArtChain[attackChain]];
@@ -27,7 +28,7 @@ public abstract class CombateeEntity : LiveEntity
 
     protected virtual void TakeDamage(float amount, bool canInterupt)
     {
-        health -= amount;
+        stats.currentHealth -= amount;
         if (canInterupt && isInteruptable) Interupt();
     }
 
@@ -44,6 +45,7 @@ public abstract class CombateeEntity : LiveEntity
                 trueDamageDealt += weapon.baseDamage * art.damageProperties[a].damageModifier; //+ defense of enemy!!
             }
             entitiesToDamage[i].TakeDamage(trueDamageDealt, art.canInterupt);
+            entitiesToDamage[i].Push(art.momentumCausedAngle + Vector2.SignedAngle(Vector2.right,entitiesToDamage[i].transform.position - transform.position), art.momentumCausedMagnitude * weapon.momentumCausedMultiplier);
         }
 
     }
@@ -57,21 +59,23 @@ public abstract class CombateeEntity : LiveEntity
     {
         currentArt = art;
         isInteruptable = true;
-        Debug.Log("Art Initiated");
+        //Debug.Log("Art Initiated");
         yield return new WaitForSeconds(art.windUpDuration);
-        Debug.Log("Art Wind Up End");
+        //Debug.Log("Art Wind Up End");
         float _durationBetweenHits = art.actionDuration / art.numberOfHits;
 
         for (int i = 0; i < art.numberOfHits; i++)
         {
+            Debug.Log("lookAngle: " + lookAngle);
+            this.Push(lookAngle + art.momentumInccuredAngle, art.momentumInccuredMagnitude * weapon.momentumIncurredMultiplier);
             DealDamage(art);
             yield return new WaitForSeconds(_durationBetweenHits);
         }
 
         isInteruptable = false;
-        Debug.Log("Art Winding Down");
+        //Debug.Log("Art Winding Down");
         yield return new WaitForSeconds(art.windDownDuration);
-        Debug.Log("Art End");
+        //Debug.Log("Art End");
         currentArt = null;
         currentActionCoroutine = null;
     }

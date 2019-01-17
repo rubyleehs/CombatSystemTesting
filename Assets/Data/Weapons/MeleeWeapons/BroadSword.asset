@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: BroadSword
   m_EditorClassIdentifier: 
   baseDamage: 50
+  momentumIncurredMultiplier: 1.5
+  momentumCausedMultiplier: 1.5
   damageProperties:
   - damageAmount: 50
     damageType: {fileID: 11400000, guid: 3fb4094bf2a798045b4656db90200b1a, type: 2}
   attackArtArsenal: {fileID: 11400000, guid: 8d045f3a6ae5403459c56c3989d21ee2, type: 2}
-  attackArtChain: 00000000
+  attackArtChain: 0000000001000000
