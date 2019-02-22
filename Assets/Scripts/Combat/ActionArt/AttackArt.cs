@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class AttackArt : ScriptableObject {
+public class AttackArt : ScriptableObject {
     public HitboxInfo[] hitboxInfo;
     public PhysicalDamageProperties[] damageProperties;
 
